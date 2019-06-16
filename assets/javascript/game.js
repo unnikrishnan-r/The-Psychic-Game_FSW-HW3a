@@ -60,6 +60,8 @@ function restartGame() {
     totalGuess = 9;
     userGuess = [];
     hasGameStarted = false;
+    guessSoFar.textContent = userGuess;
+    guessLeft.textContent = totalGuess;
     document.querySelector("#computerMadeItsChoice").innerHTML = "Press any key to restart the game";
 }
 
@@ -78,6 +80,7 @@ document.onkeyup = function (event) {
         computerChoice = letterArray[Math.floor(Math.random() * letterArray.length)];
         console.log(computerChoice);
         document.querySelector("#computerMadeItsChoice").innerHTML = "Computer made its choice, make yours";
+        guessLeft.textContent = totalGuess;
         hasGameStarted = true;
         return;
 
